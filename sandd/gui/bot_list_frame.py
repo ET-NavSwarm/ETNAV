@@ -15,6 +15,7 @@ class BotListFrame(ScrollableFrame):
     def __init__(self, bots):
         ScrollableFrame.__init__(self)
         self.buttons = []
+        self.button_bots = []
         self.bots = bots
         self.done = False
         self.add_bots(bots)
@@ -24,17 +25,20 @@ class BotListFrame(ScrollableFrame):
     """
     def add_bots(self, bots):
         for bot_id in bots:
-            bot = bots[bot_id]
-            button = Button(self.interior, text="BOT "+str(bot.id), width=BUTTON_WIDTH, height=BUTTON_HEIGHT)
-            button.pack()
-            button.bind("<Button-1>", self.open_bot)
-            self.buttons.append(button)
+            if bot_id not in self.button_bots:
+                bot = bots[bot_id]
+                button = Button(self.interior, text="BOT "+str(bot.id), width=BUTTON_WIDTH, height=BUTTON_HEIGHT)
+                button.pack()
+                button.bind("<Button-1>", self.open_bot)
+                self.buttons.append(button)
+                self.button_bots.append(bot_id)
 
     """
     Just updates the array to whatever the new bots are.
     """
     def update_bots(self, bots):
         self.bots = bots
+        self.add_bots(self.bots)
 
     """
     Opens a bot window from a button's event object.

@@ -30,7 +30,7 @@ class GPSFrame(Frame):
                                 llcrnrlon = -90, llcrnrlat = -90,  # Lower left lat/lon
                                 urcrnrlon = 90, urcrnrlat = 90)  # Upper right lat/lon
 
-        self.main_map.readshapefile("resources/UScounties", "areas")
+        #self.main_map.readshapefile("resources/UScounties", "areas")
         self.main_map.shadedrelief()
 
         self.plot_bots()
