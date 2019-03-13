@@ -19,6 +19,7 @@ class PSOData:
     def add_point(self, coords, reading):
         self.location_history.append(coords)
         self.reading_history.append(reading)
+        # Could maybe separate into separate function/method?
         if self.local_best_reading.should_update_to(reading):
             self.local_best_reading = reading
         if self.global_best_reading.should_update_to(reading):

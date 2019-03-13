@@ -22,4 +22,4 @@ class Bounds:
     def coords_to_bin(coords):
         dx = coords.x - Bounds.begin_x
         dy = coords.y - Bounds.begin_y
-        # TODO fuck your explanation
+        # TODO fuck your explanation, LMAO
