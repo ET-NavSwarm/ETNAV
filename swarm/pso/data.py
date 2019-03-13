@@ -22,8 +22,10 @@ class PSOData:
         # Could maybe separate into separate function/method?
         if self.local_best_reading.should_update_to(reading):
             self.local_best_reading = reading
+            self.local_best_coords = self.location_history[self.cur_history_idx]
         if self.global_best_reading.should_update_to(reading):
             self.global_best_reading = reading
+            self.global_best_coords = self.location_history[self.cur_history_idx]
              
         self.cur_history_idx += 1
 
