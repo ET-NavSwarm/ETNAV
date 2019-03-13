@@ -1,0 +1,4 @@
+{
+    "arduino": "/dev/ttyACM0",
+    "xbee": "/dev/ttyUSB0"
+}

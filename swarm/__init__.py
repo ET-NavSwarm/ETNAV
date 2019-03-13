@@ -1,4 +1,3 @@
-from . import config
-from . import bot
-from . import states
-from . import communication
+import communication
+import pso
+import test
